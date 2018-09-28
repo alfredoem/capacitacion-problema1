@@ -31,3 +31,6 @@ mportancia tiene los tags en un proyecto?
 
 12. ¿Cuál es la diferencia entre docker ps y docker ps -a?
 	Un docker ps lista solamente los containers que se encuentran encendidos, mientras que docker ps -a lista todos los containers así no se encuentren encendidos.
+
+13. Comando para ejecutar el contenedor:
+	docker run aespiritu/orbis-training-docker:0.2.0  
