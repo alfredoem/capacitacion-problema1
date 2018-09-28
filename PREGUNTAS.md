@@ -34,3 +34,22 @@ mportancia tiene los tags en un proyecto?
 
 13. Comando para ejecutar el contenedor:
 	docker run aespiritu/orbis-training-docker:0.2.0  
+
+PARTE 5
+
+1. ¿Cuál es la diferencia entre una imagen y un contenedor?
+	La imagen es como una clase base y el contenedor es como una instancia de la imagen.
+2. ¿Cómo listo las imágenes que hay en mi computadora?
+	Con el comando docker images
+3. ¿Cómo salgo de un contenedor de docker?
+	con el comando "exit"
+4. ¿Se elimina el contenedor al salir de ella?
+	No se elimina el contenedor, solamente se apaga.
+5. ¿Cómo elimino un contenedor?
+	con el comando docker kill
+6. ¿Para qué es necesario el flag `-i`, `-t`, `--rm`?
+	el flag -i te permite iteractuar con el contenedor y el flag -t te muestra información del terminal, el flag --rm te permite eliminar el contenedor cuando 		escapas del mismo.
+7. ¿Cómo verifico que el archivo creado se encuentra en la imagen?
+	Se puede verificar ejecutando el comando: docker run aespiritu/orbis-training-docker:0.2.0 ls
+8. ¿Cómo se comenta una linea de código en Dockerfile?
+	Agregando un "#" al inicio de la línea
