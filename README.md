@@ -13,3 +13,6 @@ Comando para exponer el puerto 1080 dsde el puerto 80 del contenedor:
 
 Comando para levantar el contenedor con doker-compose:
 	docker-compose up
+	
+Comando para instalar dependencias npm
+    docker run -it --workdir=/resources aespiritu/orbis-training-docker:3.0.0 npm install

@@ -53,3 +53,14 @@ PARTE 5
 	Se puede verificar ejecutando el comando: docker run aespiritu/orbis-training-docker:0.2.0 ls
 8. ¿Cómo se comenta una linea de código en Dockerfile?
 	Agregando un "#" al inicio de la línea
+
+PARTE 6
+
+1. ¿Qué es NGINX?
+	Es un servidor que te permite mostrar contenido en web
+2. ¿Cómo expongo puertos en docker?
+	Con la opción -p puerto_container:puerto_host
+3. ¿Cómo especifico los puertos al levantar un contenedor (docker run)?
+	con docker run -p puerto_contenedor:puerto_host
+4. ¿Cómo hago 'forward' al levantar un contenedor (docker run)?
+	Se trata del mismo comando para enlazar un puerto interno del contenedor con el puerto del host
