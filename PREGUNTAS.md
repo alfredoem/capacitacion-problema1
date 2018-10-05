@@ -64,3 +64,7 @@ PARTE 6
 	con docker run -p puerto_contenedor:puerto_host
 4. ¿Cómo hago 'forward' al levantar un contenedor (docker run)?
 	Se trata del mismo comando para enlazar un puerto interno del contenedor con el puerto del host
+	
+PARTE 7
+¿Qué pasa si no especifico el directorio de trabajo?
+	No encuentra el archivo package.json
