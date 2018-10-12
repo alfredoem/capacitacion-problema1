@@ -4,7 +4,9 @@ Integrantes:
 - Alfredo Espiritu Monago
 - Gerardo Sanchez Calderon
 
-mportancia tiene los tags en un proyecto?
+---
+
+¿Qué importancia tiene los tags en un proyecto?
 	Sirven para poder identificar las diferentes versiones que se manejan dentro del proyecto.
 2. ¿Cuál es la diferencia entre un tag normal y un tag anotado en git?
 	Un tag anotado contiene un mensaje. mientras que los tags normales no.
@@ -35,6 +37,8 @@ mportancia tiene los tags en un proyecto?
 13. Comando para ejecutar el contenedor:
 	docker run aespiritu/orbis-training-docker:0.2.0  
 
+---
+
 PARTE 5
 
 1. ¿Cuál es la diferencia entre una imagen y un contenedor?
@@ -54,6 +58,8 @@ PARTE 5
 8. ¿Cómo se comenta una linea de código en Dockerfile?
 	Agregando un "#" al inicio de la línea
 
+---
+
 PARTE 6
 
 1. ¿Qué es NGINX?
@@ -64,7 +70,19 @@ PARTE 6
 	con docker run -p puerto_contenedor:puerto_host
 4. ¿Cómo hago 'forward' al levantar un contenedor (docker run)?
 	Se trata del mismo comando para enlazar un puerto interno del contenedor con el puerto del host
+
+---
 	
 PARTE 7
+
 ¿Qué pasa si no especifico el directorio de trabajo?
 	No encuentra el archivo package.json
+	
+¿Porqué el puerto 3030?
+    Es el puerto donde se muestra el html generado
+
+¿Porqué el puerto 35729?
+    Es el puerto que verifica cambios y genera otra vez el html
+    
+Comando
+`docker run -p 3030:3030 -p 35729:35729 aespiritu/orbis-training-docker:3.0.0 npm run start`
