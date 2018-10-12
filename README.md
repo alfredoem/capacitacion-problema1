@@ -16,3 +16,15 @@ Comando para levantar el contenedor con doker-compose:
 	
 Comando para instalar dependencias npm
     docker run -it --workdir=/resources aespiritu/orbis-training-docker:3.0.0 npm install
+
+9.
+
+Visualizar la web
+Puerto: 1042
+
+10.
+
+Pasos para generar un nuevo release
+- levantar el container
+- ingresar al bash del container
+- ejecutar comando npm para generar nuevo release

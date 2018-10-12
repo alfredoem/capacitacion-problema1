@@ -2,6 +2,6 @@ version: "2.2"
 services:
   nginx:
     container_name: nginx_app
-    image: aespiritu/orbis-training-docker:2.0.0
+    image: aespiritu/orbis-training-docker:3.0.0
     ports:
       - "8080:80"
