@@ -1,7 +1,8 @@
 version: "2.2"
 services:
   nginx:
-    container_name: nginx_app
+    container_name: remarker_app
     image: aespiritu/orbis-training-docker:3.0.0
     ports:
-      - "8080:80"
+      - "1042:3030"
+    command: npm run start
