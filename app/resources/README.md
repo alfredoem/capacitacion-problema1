@@ -43,3 +43,13 @@ Comando para ejecutar archivo BASH
 
 Comando para pasar pariable de entorno al container
 `docker run -e "NAME=Aloha" -it --entrypoint /resources/example.sh  aespiritu/orbis-training-docker:3.0.0`
+
+¿Qué sucede si le quito el @?
+    Se muestra el comando ejecutado
+    
+PASO 9
+
+1. ¿Para qué sirve el archivo `Makefile`?
+    Para crear comandos make que permitan ejecutar comando mas complejos
+2. ¿Qué es un `target` en `Makefile`?
+    Es el nombre que se le da aun comando en makefile

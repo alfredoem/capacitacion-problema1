@@ -6,6 +6,8 @@ services:
     ports:
       - "1042:3030"
     command: npm run start
+    volumes:
+      - ./resources:/resources
 
   test:
     depends_on:

@@ -1,4 +1,4 @@
 FROM node:10.10.0-slim
-COPY package.json /
-WORKDIR /
-RUN npm install
+RUN mkdir app
+RUN chmod 777 app
+WORKDIR app

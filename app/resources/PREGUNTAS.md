@@ -130,3 +130,4 @@ Comando
     Si, indicandole la ruta donde esta el interprete
 5. ¿Cómo se envía variables de entorno por Docker CLI y docker-compose?
     Se envia mediante la opción -e
+    Se envia mediante la opción -e
