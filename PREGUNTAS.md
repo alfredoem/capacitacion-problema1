@@ -86,3 +86,47 @@ PARTE 7
     
 Comando
 `docker run -p 3030:3030 -p 35729:35729 aespiritu/orbis-training-docker:3.0.0 npm run start`
+
+12. Preguntas 
+
+1. ¿Es necesario especificar el `workdir` en docker?, ¿Porqué?
+    Es para indicar desde que ubicación se van a ejecutar los comandos
+2. ¿Que hacen los siguientes comandos? 
+ -`docker ps`
+    Lista los containers activos
+ -`docker pull`
+    Descargar cambios de la imagen
+ -`docker push` 
+    Subir cambios de la imagen al repositorio remoto
+ -`docker rm`
+    Eliminar un container
+ -`docker rmi`
+    Eliminar una imagen
+ -`docker run`
+    Levantar un nuevo container
+ -`docker tag`
+    Etiquetar una imagen
+ -`docker search`
+    Permite buscar imagenes del dockerhub
+ -`docker login`
+    Inicia sesión en dockerhub
+ -`docker exec`
+    Ejecuta un comando dentro del container
+ -`docker build`
+    Contruye una imagen
+ -`docker inspect`
+    Lista caracteristicas de un container
+ -`docker network`
+    Permite administrar las redes
+    
+6. 
+1. ¿Qué es bash? ¿Qué significa?
+    son archivos ejecutables, que se pueden ejecutar como comandos del SO
+2. ¿Cómo ejecuto un archivo bash?
+    Invocandolo con su nombre
+3. ¿Qué pasa si no especifico en un `.sh`, la linea `#!/bin/bash`?
+    Sirve para indicar en que ubicación esta el interprete de bash
+4. ¿Se puede cambiar el modo bash (`/bin/bash`) a otro tipo de ejecución?
+    Si, indicandole la ruta donde esta el interprete
+5. ¿Cómo se envía variables de entorno por Docker CLI y docker-compose?
+    Se envia mediante la opción -e

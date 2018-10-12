@@ -1,8 +1,15 @@
-version: "2.2"
+version: "3.3"
 services:
-  nginx:
+  app:
     container_name: remarker_app
     image: aespiritu/orbis-training-docker:3.0.0
     ports:
       - "1042:3030"
     command: npm run start
+
+  test:
+    depends_on:
+      - app
+    container_name: remarker_app_test
+    image: node:10.10-slim
+    command: curl app:3030

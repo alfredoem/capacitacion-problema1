@@ -17,6 +17,8 @@ Comando para levantar el contenedor con doker-compose:
 Comando para instalar dependencias npm
     docker run -it --workdir=/resources aespiritu/orbis-training-docker:3.0.0 npm install
 
+PARTE 07
+
 9.
 
 Visualizar la web
@@ -28,3 +30,16 @@ Pasos para generar un nuevo release
 - levantar el container
 - ingresar al bash del container
 - ejecutar comando npm para generar nuevo release
+
+PARTE 08
+
+Comando para ejecutar curl desde un container
+
+`docker run --network="orbis-training-project_default" node:10.10.0-slim curl remarker_app:3030`
+
+Comando para ejecutar archivo BASH
+
+`docker run -e "NAME=Aloha" -v $PWD/resources:/resources aespiritu/orbis-training-docker:3.0.0 /resources/example.sh`
+
+Comando para pasar pariable de entorno al container
+`docker run -e "NAME=Aloha" -it --entrypoint /resources/example.sh  aespiritu/orbis-training-docker:3.0.0`
