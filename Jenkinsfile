@@ -10,7 +10,7 @@ pipeline {
                 sh 'ls'
             }
         }
-        stage('build') {
+        stage('finish') {
                 steps {
                     input "Finished using the web site?"
                 }
