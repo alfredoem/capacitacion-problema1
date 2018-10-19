@@ -87,6 +87,8 @@ PARTE 7
 Comando
 `docker run -p 3030:3030 -p 35729:35729 aespiritu/orbis-training-docker:3.0.0 npm run start`
 
+---
+
 12. Preguntas 
 
 1. ¿Es necesario especificar el `workdir` en docker?, ¿Porqué?
@@ -118,8 +120,11 @@ Comando
     Lista caracteristicas de un container
  -`docker network`
     Permite administrar las redes
-    
+
+---
+
 6. 
+
 1. ¿Qué es bash? ¿Qué significa?
     son archivos ejecutables, que se pueden ejecutar como comandos del SO
 2. ¿Cómo ejecuto un archivo bash?
@@ -130,4 +135,229 @@ Comando
     Si, indicandole la ruta donde esta el interprete
 5. ¿Cómo se envía variables de entorno por Docker CLI y docker-compose?
     Se envia mediante la opción -e
-    Se envia mediante la opción -e
+   
+
+---
+
+
+PARTE 10
+
+PREGUNTAS:
+
+¿Qué significa el comando -d?
+
+    Indica condicional sobre un directorio
+
+¿Porqué la sentencia comienza con @?
+
+    Para no mostrar el comando en la salida de la ejecución
+¿Para qué sirve el comando mkdir?
+
+    crea un directorio
+    
+Explicar lo que hace la función mkdir_deploy_dir
+    
+    Verifica si un directorio no existe y lo crea
+    
+
+---
+
+PREGUNTAS:
+¿Para qué sirve el uso de \?
+    
+    Para dividir la sentencia en varias lineas
+    
+¿Para qué sirve el uso de &&?
+
+    Condicional y
+    
+¿Qué función cumple usar los argumentos -rf?
+   
+   Realizar el comando recursivamente y forzado
+    
+    
+Explicar lo que hace la función git_init (linea por linea)
+    
+    Se mueve al directorio, luego elimina recursivamente todos los archivos .git y finalmente
+    incializa git en el directorio
+
+---
+
+PREGUNTAS:
+¿Para qué sirve el uso de eval?
+    
+    Ejecuta un comando y guarda la salida en la variable
+    
+¿Para qué sirve el uso de shell?
+    
+    Permite interpretar los comandos bash
+¿Para qué sirve el uso de git log --pretty=format:"%an"?
+    
+    Lista el log y muestra solo el nombre del autor de los commits
+
+¿Cuál es la diferencia en usar git config y git config --global?
+
+    Uno guarda configuracion por todos los proyectos y sin --global guarda individualemte
+    
+Explicar lo que hace la función git_config (línea por línea)
+    
+    Captura el nombre del usuario, email, luego ingresa al directorio de la rama para el deploy, y finalmente configura los datos obtenidos en la configuracion git local
+
+---
+
+PREGUNTAS:
+
+¿Para qué sirve el uso de awk?
+    Es un lenguaje para tratamiendo de datos en texto, permite obtener la segunda columna de la salida
+    
+¿Para qué sirve el uso de sed?
+    Permite modificar textos
+
+    
+¿Para qué sirve el uso de git log --pretty=format:"%an"?
+    
+    Lista el log y muestra solo el nombre del autor de los commits
+    
+Explicar lo que hace la función git_add_remote_repository
+
+    Asigna el nombre repositorio remoto a una variable, luego le agrega el token al nombre del repositorio, 
+    ingresa al directorio del deploy y finalmente asigna el nuevo repositorio remoto
+    
+---
+
+PREGUNTAS:
+
+Explicar lo que hace la función create_branch_gh_pages
+    
+    Ingresa al directorio del deploy y luego crea una rama    
+    
+define copy_files_to_deploy
+    @cp -r $(PWD)/$(DEPLOY_DIR)/$(BUILD_DIR)/* $(GIT_BRANCH_DIR)
+endef
+
+PREGUNTAS:
+
+Explicar lo que hace la función copy_files_to_deploy
+    
+    Copia el contenido del build generado al directorio de la rama para el deploy
+    
+
+---
+
+PREGUNTAS:
+
+Explicar lo que hace la función git_add
+    
+    ingresa al directorio de la rama para el deploy, luego agrega todos los archivos al stash
+    y muestra el estatus de la rama
+    
+
+PREGUNTAS:
+
+Explicar lo que hace la función create_commit (línea por línea)
+    
+    Asigna el último subject a una variable, luego ingresa al directorio para el deploy y finalmente crea un commit con el mensaje
+    
+---
+
+PREGUNTAS:
+
+Explicar lo que hace la función git_push (línea por línea)
+    
+    Ingresa al directorio del deploy y realiza un push forzado
+    
+ 
+PREGUNTAS:
+
+Explicar lo que hace la función clean_workspace
+    
+    Elimina el directorio del deploy forzadamente
+    
+
+---
+
+
+PREGUNTAS:
+
+¿Para qué sirve el uso de ifeq?
+
+    Compara valores
+    
+¿Para qué sirve el uso de strip?
+
+    Elimina espacios y reduce espacios duplicados
+
+Explicar lo que hace la función show_deploy_url (línea por línea)
+
+    Verifica si el diectorio existe, luego obtiene el nombre del usuario, el nombre del repositorio y finalmente muestra la url del repositorio para el deploy
+
+    
+---
+
+PREGUNTAS:
+
+¿Qué hace cada paso?
+
+    1. Crear el directorio del deploy
+    2. inicializa el repositorio
+    3. Configura los configs del repositorio
+    4. Agregar el repositorio remoto para el deploy
+    5. Crea la rama para el deploy
+    6. Copia los archivos al directorio del deploy
+    7. Agrega los archivos al stage
+    8. Realiza un commit
+    9. Sube los cambios a la rama remota
+    10. Elimina el directorio del deploy
+    11. Muestra la url del deploy
+   
+
+---
+
+PREGUNTAS:
+
+¿Que sucede si no volumeo el docker.sock?
+
+    El container no se podra comunicar con el daemon de docker local
+    
+¿Para que sirve el volumen var/jenkins_home?
+
+    para que las configuraciones generadas en el container puedan ser leidas por el daemon local
+    
+¿Puedo cambiar de puerto?
+
+    Si
+¿Que pasa si no utlizo el usuario root?
+    
+    Se limitaran los permisos del jenkins
+    
+¿Còmo instalo make en una imagen?
+    
+    descargandolo con el manejador de paquetes de la imagen
+
+
+PREGUNTAS:
+
+¿Se puede crear un volúmen desde otro volúmen en docker? ¿Porqué?
+    
+    No se puede, 
+    
+¿Para que sirve el comando docker create -v <dir> --name <container> <image>?
+    
+    Crea un image con el volumen de otra imagen
+
+¿Qué hace el comando docker cp ./ <container>:<dir>?
+
+    Copia un directorio de otro container
+    
+¿Cómo creo una network usando docker run?
+    
+    docker network create <n_name>
+    docker run --network <n_nombre>
+    
+¿Cómo conecto una network a un container? usando docker run
+    
+    docker run --network <n_nombre>
+    
+¿Qué hace docker run -it --rm --volumes-from <container> -w <dir> <image> <command>?
+    
+    Crea un container con el volumen de otro container y adicionalmente setea el directorio de inicio y finalmente ejecuta un comando
