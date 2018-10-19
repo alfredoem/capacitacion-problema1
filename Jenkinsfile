@@ -1,19 +1,19 @@
 pipeline {
-    agent any
-    environment {
-        DISABLE_AUTH = 'true'
-        DB_ENGINE    = 'sqlite'
+  agent any
+  stages {
+    stage('build') {
+      steps {
+        sh 'ls'
+      }
     }
-    stages {
-        stage('build') {
-            steps {
-                sh 'ls'
-            }
-        }
-        stage('finish') {
-                steps {
-                    input "Finished using the web site?"
-                }
-            }
-        }
+    stage('finish') {
+      steps {
+        input 'Finished using the web site?'
+      }
+    }
+  }
+  environment {
+    DISABLE_AUTH = 'true'
+    DB_ENGINE = 'sqlite'
+  }
 }
