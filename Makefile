@@ -36,3 +36,9 @@ jenkins-run:
     -v jenkins-data:/var/jenkins_home \
     -v /var/run/docker.sock:/var/run/docker.sock \
     ${USER_NAME}/jenkins-deploy:0.1.0
+
+project-workspace:
+	docker run --rm -it -d -v PWD:/app -p 3030:3030 -p 35729:35729 ${DOCKER_IMAGE}
+
+curl:
+	docker run -it --net=docexam_default node:10.10.0-slim curl http://node_app:3030/
